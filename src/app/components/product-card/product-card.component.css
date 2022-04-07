@@ -1,0 +1,13 @@
+.card-form {
+    margin: 10px;
+    padding-left: 0px; 
+    padding-right: 0px;
+}
+.card-image{
+    width: 200px;
+    height: 150px;
+}
+
+.card-title{
+    font-size: 15px;
+}

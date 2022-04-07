@@ -1,0 +1,13 @@
+<div class='row'>
+    <div class='col-4 text-center button-size'>
+        <button mat-mini-fab color="warn" (click)='removeFromCart(product)'>-</button>
+    </div>
+
+    <div class='col text-center quantity'>
+        <p>{{shoppingcart.getQuantity(product)}} in cart</p>
+    </div>
+
+    <div class="col-4 text-center button-size">
+        <button mat-mini-fab color="primary" (click)='addToCart(product)'>+</button>
+    </div>
+</div>

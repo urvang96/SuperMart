@@ -1,0 +1,16 @@
+.filterList{
+    width: 100%;
+}
+
+.card-form {
+    margin: 10px;
+    padding-left: 0px; 
+    padding-right: 0px;
+}
+.card-image{
+    width: 200px;
+}
+
+.card-title{
+    font-size: 15px;
+}

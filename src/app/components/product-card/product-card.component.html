@@ -1,0 +1,17 @@
+<mat-card  class="card-form">
+    <div class="col">
+      <img mat-card-image [src]="product.image" alt="Product Image" class="card-image">
+      <mat-card-title class="card-title">{{product.title}}</mat-card-title>
+      <mat-card-content>$ {{product.price}}</mat-card-content>
+      <mat-divider></mat-divider>
+      <mat-card-footer *ngIf='cartAction'>
+          <button mat-raised-button color="primary" class="btn-block" (click)="addToCart()"
+          *ngIf="shoppingcart && !shoppingcart.getQuantity(product)">
+          Add to Cart
+          </button>
+        <!-- <ng-template #updateQuantity> -->
+          <app-product-quantity *ngIf="shoppingcart && shoppingcart.getQuantity(product)" [product]='product' [cart]='shoppingcart'></app-product-quantity>
+        <!-- </ng-template> -->
+      </mat-card-footer>
+    </div>
+  </mat-card>

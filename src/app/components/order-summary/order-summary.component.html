@@ -1,0 +1,32 @@
+<h1>Order Details</h1>
+
+<mat-card  class="card-form" *ngIf="orderData">
+    <div class="col">
+      <!-- <img mat-card-image [src]="product.image" alt="Product Image" class="card-image"> -->
+      <mat-card-title class="card-title">For: {{orderData.name}}</mat-card-title>
+      <mat-card-subtitle>Contact Info: {{orderData.contact}}</mat-card-subtitle>
+      <mat-card-subtitle>Delivery Address: {{orderData.address}}</mat-card-subtitle>
+      <mat-divider></mat-divider>
+      <div >
+        <mat-card-content  class="content">
+            <table>
+                <tr>
+                  <th>Product</th>
+                  <th>Price</th>
+                  <th>Quantity</th>
+                </tr>
+                <tr *ngFor="let cart of cartData">
+                  <td>{{cart.title}}</td>
+                  <td>{{cart.price}}</td>
+                  <td>{{cart.quantity}}</td>
+                </tr>
+            </table>
+        </mat-card-content>
+      </div>
+      <mat-divider></mat-divider>
+      <mat-card-footer>
+          
+      </mat-card-footer>
+    </div>
+  </mat-card>
+

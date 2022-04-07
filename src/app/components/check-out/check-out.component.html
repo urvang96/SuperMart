@@ -1,0 +1,56 @@
+<h1>Shipping Details</h1>
+<form class="field-form" [formGroup]="formObj" (ngSubmit)="onSubmit(formObj)">
+
+    <mat-form-field class="form-elem">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName='name' required>
+        <mat-error *ngIf="form.name?.touched && form.name.errors?.required">
+            Name is Required
+        </mat-error>
+    </mat-form-field>
+    
+    <p>
+    <mat-form-field class="form-elem">
+        <mat-label>Address</mat-label>
+        <textarea matInput  formControlName='address' required></textarea>
+        <mat-error *ngIf="form.address?.touched && form.address.errors?.required">
+            Address is Required
+        </mat-error>
+    </mat-form-field>
+    </p>
+
+    <p>
+    <mat-form-field class="form-elem">
+        <mat-label>City</mat-label>
+        <input matInput placeholder="5" formControlName='city' required>
+        <mat-error *ngIf="form.city?.touched && form.city.errors?.required">
+            City is Required
+        </mat-error>
+    </mat-form-field>
+    </p>
+
+    <p>
+        <mat-form-field class="form-elem">
+            <mat-label>Pin Code</mat-label>
+            <input matInput formControlName='pincode' required>
+            <mat-error *ngIf="form.pincode?.touched && form.pincode.errors?.required">
+                Pin Code is Required
+            </mat-error>
+        </mat-form-field>
+    </p>
+
+    <p>
+    <mat-form-field class="form-elem">
+        <mat-label>Contact</mat-label>
+        <input matInput formControlName='contact' required>
+        <mat-error *ngIf="form.contact?.touched && form.contact.errors?.required">
+            Contact number is Required
+        </mat-error>
+    </mat-form-field>
+    </p>
+    
+    <div>
+        <button mat-raised-button color="primary" [disabled]="!formObj.valid">Place Order</button>
+    </div>
+
+</form>

@@ -1,0 +1,15 @@
+.quantity {
+    height: 37px;
+    line-height: 37px;
+    max-width: 45%;
+}
+
+.button-style{
+    height: 30px;
+    width: 30px;
+    text-align: center;
+}
+
+.button-size{
+    max-width: 25%;
+}

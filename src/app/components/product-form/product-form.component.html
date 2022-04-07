@@ -1,0 +1,64 @@
+<mat-grid-list cols="2">
+
+    <mat-grid-tile>
+
+        <form class="field-form" [formGroup]="formObj" (ngSubmit)="onSubmit(formObj)">
+
+            <mat-form-field class="form-elem">
+                <mat-label>Title</mat-label>
+                <input matInput formControlName='title' required>
+                <mat-error *ngIf="form.title?.touched && form.title.errors?.required">
+                    Product Name is Required
+                </mat-error>
+            </mat-form-field>
+            
+            <mat-form-field class="form-elem">
+                <mat-label>Price</mat-label>
+                <span matPrefix>$ &nbsp;</span>
+                <input type="price" matInput placeholder="5" formControlName='price' required>
+                <mat-error *ngIf="form.price?.touched && form.price.errors?.required">
+                    Product Price is Required
+                </mat-error>
+                <mat-error *ngIf="form.price?.touched && form.price.errors?.InvalidPrice">
+                    Product Price is invalid
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="form-elem">
+                <mat-label>Catagory</mat-label>
+                <mat-select formControlName='catagory' required>
+                    <mat-option *ngFor="let c of catagoryList$ | async" [value]="c.name">{{c.name}}</mat-option>
+                </mat-select>
+                <mat-error *ngIf="form.catagory?.touched && form.catagory.errors?.required">
+                    Product Catagory is Required
+                </mat-error>
+            </mat-form-field>
+
+            <mat-label class="image-upload-container btn btn-bwm upload-button">
+                <span>Image</span>
+                &nbsp;
+                <input formControlName='image' type="file" accept="images/*" (change)="processFile($event)">
+                <div *ngIf="progress | async as val">
+                    <progress type="warning"  [value]="val" style="height: 7mm; width: 50%" max="100" ></progress>
+                </div>
+            </mat-label>
+            
+            <div class="submit">
+                <button mat-raised-button color="primary" [disabled]="!formObj.valid">Save</button>
+                &nbsp;
+                <button mat-raised-button color="warn" (click)="delete()">Delete</button>
+            </div>
+
+        </form>
+
+     </mat-grid-tile>
+    
+     <mat-grid-tile>
+
+        <div *ngIf="product">
+            <app-product-card  [product]="product" [cartAction]='false'></app-product-card>
+        </div>
+    
+    </mat-grid-tile>
+
+</mat-grid-list>

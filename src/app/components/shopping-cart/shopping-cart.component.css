@@ -1,0 +1,24 @@
+table {
+    width: 100%;
+  }
+  
+tr.mat-footer-row {
+font-weight: bold;
+}
+
+td.mat-cell{
+    border-left-style: none;
+    border-right-style: none;
+}
+
+.quantity-size{
+  max-width: 50px;
+}
+
+.align-header{
+  text-align: center;
+}
+
+.checkout{
+  margin-top: 50px;
+}
